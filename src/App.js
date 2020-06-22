@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import DisplayStores from './components/DisplayStores'
 
-function App() {
+class App extends Component {
 
-return (
-  <h1>Hello World</h1>
-);
-
+  render(){
+    return(
+      < DisplayStores />
+    );
+  }
 }
 
 export default App;
