@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const ListStores = (props) => {
   const { stores } = props;
@@ -10,6 +11,7 @@ const ListStores = (props) => {
           <li key={stores.id} className='list'>
             <h3 className='store-name'>{stores.name} </h3>
             <p className='store-owner'>{stores.owner}</p>
+            <Link to={`/${stores.url}`}> <button> Shop {stores.name} </button> </Link>
           </li>
         );
       })}
@@ -32,15 +34,18 @@ function DisplayStores() {
       });
   }, [setAppState]);
 
+
   return (
     <div className='App'>
       <div className='container'>
         <h1>Street Collectiv Stores</h1>
       </div>
       <div className='stores-container'>
-        < ListStores stores={appState.stores} />
+        < ListStores stores={appState.stores}/>
       </div>
     </div>
+
   );
 }
+
 export default DisplayStores;
