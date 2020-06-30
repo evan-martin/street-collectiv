@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NavBar from './NavBar';
 
 const ListProducts = (props) => {
   const { products } = props;
@@ -34,6 +35,7 @@ function DisplayProducts() {
 
   return (
     <div className='App'>
+    <NavBar />
       <div className='container'>
         <h1>La Shae products</h1>
       </div>

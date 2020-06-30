@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from './NavBar'
 
 const ListStores = (props) => {
   const { stores } = props;
@@ -37,6 +38,7 @@ function DisplayStores() {
 
   return (
     <div className='App'>
+    <NavBar />
       <div className='container'>
         <h1>Street Collectiv Stores</h1>
       </div>
