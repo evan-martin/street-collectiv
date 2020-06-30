@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, BrowserRouter } from 'react-router-dom';
 import DisplayStores from './components/DisplayStores'
-import DisplayProducts from './components/DisplayProducts'
+import AltaclassicProducts from './components/AltaclassicProducts'
+import LashaeProducts from './components/LashaeProducts'
+import SunstoneProducts from './components/SunstoneProducts'
 
 class App extends Component {
 
@@ -10,7 +12,9 @@ class App extends Component {
     return(
       <BrowserRouter>
         <Route exact path = '/' component = { DisplayStores } />
-        <Route exact path = '/products' component = { DisplayProducts } />
+        <Route exact path = '/altaclassic' component = { AltaclassicProducts } />
+        <Route exact path = '/lashae' component = { LashaeProducts } />
+        <Route exact path = '/sunstone' component = { SunstoneProducts } />
       </BrowserRouter>
     );
   }
