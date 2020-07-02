@@ -1,6 +1,9 @@
 import React, { useState} from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from './NavBar'
+import Banner from './Banner'
+import StoreCard from './StoreCard'
+import { Grid } from '@material-ui/core/'
 
 const ListStores = (props) => {
   const { stores } = props;
@@ -39,11 +42,12 @@ function DisplayStores() {
   return (
     <div className='App'>
     <NavBar />
-      <div className='container'>
-        <h1>Street Collectiv Stores</h1>
-      </div>
       <div className='stores-container'>
-        < ListStores stores={appState.stores}/>
+      <Grid container direction="column" justify="center" alignItems="center">
+          <Banner />
+          <ListStores stores={appState.stores}/>
+          <StoreCard /> 
+      </Grid>
       </div>
     </div>
 
