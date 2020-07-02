@@ -3,6 +3,7 @@ import axios from 'axios'
 import NavBar from './NavBar'
 import Banner from './Banner'
 import StoreCard from './StoreCard'
+import './styles/cardstyles.css'
 
 class StoreList extends Component {
   constructor(){
@@ -29,14 +30,12 @@ render(){
       <div>
         <Banner />
       </div>
-    <StoreCard>
-      {this.state.stores.map(stores => (
-        <div>
-          <h1 key={stores.id}> {stores.name} </h1>
-          <p> {stores.owner} </p>
-        </div>
-      ))}
-    </StoreCard>
+      <div>
+        {this.state.stores.map(store =>(
+          <StoreCard key = {store.id} store = {store} />
+        ))}
+      </div>
+
     </div>
   )
 }

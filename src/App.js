@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, BrowserRouter } from 'react-router-dom';
-import DisplayStores from './components/DisplayStores'
 import AltaclassicProducts from './components/AltaclassicProducts'
 import LashaeProducts from './components/LashaeProducts'
 import SunstoneProducts from './components/SunstoneProducts'
