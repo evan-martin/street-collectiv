@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
-import Banner from "./Banner";
-import StoreCard from "./StoreCard";
+import ProductCard from "./ProductCard";
 import "./styles/cardstyles.css";
 
-class StoreList extends Component {
+class ProductList extends Component {
   constructor() {
     super();
 
@@ -26,9 +25,7 @@ class StoreList extends Component {
         <div>
           <NavBar />
         </div>
-        <div>
-          <Banner />
-        </div>
+
         <div>
           {this.state.stores.map(store => (
             <StoreCard key={store.id} store={store} />
@@ -39,4 +36,4 @@ class StoreList extends Component {
   }
 }
 
-export default StoreList;
+export default ProductList;
