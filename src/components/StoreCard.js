@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 
-const StoreCard = props => {
+const StoreCard = ({ title }) => {
   return (
     <div>
-      <span> {props.children} </span>
+      <h1> {title} </h1>
     </div>
   );
 };

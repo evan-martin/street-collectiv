@@ -3,40 +3,21 @@ import axios from "axios";
 import StoreCard from "./StoreCard";
 import "./styles/cardstyles.css";
 import "./styles/avatar.scss";
+import SHOP_DATA from './shop.data.js'
 
 class StoreList extends Component {
   constructor() {
     super();
-
-    this.state = {
-      stores: []
-    };
   }
 
-  componentDidMount() {
-    axios.get("/stores").then(res => {
-      this.setState({
-        stores: res.data
-      });
-    });
-  }
 
   render() {
+    const {collections} = this.state;
     return (
       <div>
-        <StoreCard>
-          {this.state.stores.map(stores => (
-            <div>
-              <div>
-                <img className="avatar" src={stores.img_path} />
-              </div>
-              <div className="storecard">
-                <h1 key={stores.id}> {stores.name} </h1>
-                <p> {stores.owner} </p>
-              </div>
-            </div>
+          {collections.map(({ id, otherCollectionProps}) => (
+                <StoreList key={id} {...otherCollectionProps} />
           ))}
-        </StoreCard>
       </div>
     );
   }

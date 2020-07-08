@@ -3,35 +3,29 @@ import axios from "axios";
 import NavBar from "./NavBar";
 import ProductCard from "./ProductCard";
 import "./styles/cardstyles.css";
+import SHOP_DATA from './shop.data.js'
 
 class ProductList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      stores: []
+      collections: SHOP_DATA,
+      store: 'default'
     };
-  }
 
-  componentDidMount() {
-    axios.get("/stores").then(res => {
-      this.setState({stores: res.data});
-    });
+    console.log(SHOP_DATA);
   }
 
   render() {
+    const {collections} = this.state;
     return (
-      <div>
         <div>
-          <NavBar />
-        </div>
-
-        <div>
-          {this.state.stores.map(store => (
-            <StoreCard key={store.id} store={store} />
+          {collections.map(({id, ...otherCollectionProps }) => (
+            <ProductCard key={id} {...otherCollectionProps} />
           ))}
         </div>
-      </div>
+
     );
   }
 }

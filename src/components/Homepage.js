@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import NavBar from "./NavBar";
 import Banner from "./Banner";
 import StoreList from "./StoreList";
+import ProductList from './ProductList'
 
 class Homepage extends Component {
   constructor() {
