@@ -1,24 +1,28 @@
 import React, {Component} from "react";
-import NavBar from "./NavBar";
-import Banner from "./Banner";
-import StoreList from "./StoreList";
-import ProductList from './ProductList'
+import Header from "./header.component";
+import Banner from "./banner.component";
+import ShopList from "./shop-list.component";
+
+import SHOP_DATA from "./shop.data";
 
 class Homepage extends Component {
   constructor() {
     super();
+    this.state = {
+      collections: SHOP_DATA
+    };
   }
   render() {
     return (
       <div>
         <div>
-          <NavBar />
+          <Header />
         </div>
         <div>
           <Banner />
         </div>
         <div>
-          <StoreList />
+          <ShopList collections={this.state.collections} />
         </div>
       </div>
     );
