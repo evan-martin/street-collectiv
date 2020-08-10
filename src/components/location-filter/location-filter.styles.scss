@@ -1,0 +1,27 @@
+.location-filters{
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.explore{
+  display: flex;
+  align-items: center;
+}
+
+.filter-list{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.filter {
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin: 15px;
+}
+
+.filter--active {
+  border-bottom: 1px solid black;
+}

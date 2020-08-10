@@ -1,16 +1,32 @@
-import React, {Component} from "react";
-import "./App.css";
-import {Route, BrowserRouter} from "react-router-dom";
-import Homepage from "./components/Homepage";
+import React from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-class App extends Component {
+import './App.css';
+
+import HomePage from './pages/homepage/homepage.component';
+import CheckoutPage from './pages/checkout/checkout.component';
+import SplashPage from './pages/splash/splash.component'
+
+import Header from './components/header/header.component';
+
+
+
+class App extends React.Component {
+
   render() {
     return (
-      <BrowserRouter>
-        <Route exact path="/" component={Homepage} />
-      </BrowserRouter>
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={SplashPage} />
+          <Route path='/shop' component={HomePage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
+        </Switch>
+      </div>
     );
   }
 }
 
-export default App;
+export default connect()(App);
