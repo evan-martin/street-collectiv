@@ -9,7 +9,8 @@
   .logo-container {
     height: 100%;
     width: 500px;
-    padding: 0px;
+    padding: 10px;
+    color:black;
   }
 
   .options {
@@ -22,6 +23,7 @@
     .option {
       padding: 10px 15px;
       cursor: pointer;
+      color: black;
     }
   }
 }
