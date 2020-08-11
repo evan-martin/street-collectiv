@@ -5,6 +5,7 @@
   padding-top: 10px;
   margin-right: 10em;
   margin-left: 10em;
+  width: 1000px;
 
   .title {
     font-size: 38px;
@@ -20,4 +21,33 @@
       margin-bottom: 30px;
     }
   }
+}
+
+.our-story{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  width: 1000px;
+
+.image{
+  width: 300px;
+}
+
+.shop-info{
+  display: flex;
+  flex-direction: column;
+
+.title{
+  flex-direction: column;
+  margin-left: 50px;
+  margin-bottom: 20px;
+}
+
+.bio{
+  width: 500px;
+  margin-left: 50px;
+}
+}
+
 }

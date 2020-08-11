@@ -12,7 +12,6 @@ const HomePage = ({ match }) => (
   <div>
   <div className='homepage'>
     <Banner />
-    <Locationfilter />
     <div className='shop-page'>
       <Route exact path={`${match.path}`} component={Directory} />
       <Route path={`${match.path}/:collectionId`} component={CollectionPage} />

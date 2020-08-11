@@ -2,6 +2,8 @@ const SHOP_DATA = {
   shop1: {
     id: 1,
     title: 'Shop 1',
+    imageUrl: 'https://picsum.photos/500/500',
+    bio: 'Vexillologist thundercats biodiesel williamsburg cronut you probably havent heard of them cloud bread. Salvia celiac enamel pin jean shorts vape. Aesthetic la croix hashtag narwhal yr ramps hot chicken marfa put a bird on it hell of vinyl normcore. Master cleanse austin photo booth craft beer disrupt yuccie, palo santo VHS etsy.',
     routeName: 'shop1',
     items: [
       {
