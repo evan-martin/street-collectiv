@@ -3,9 +3,8 @@
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
-  margin-right: 10em;
-  margin-left: 10em;
-  width: 1000px;
+  margin-right: 0em;
+  margin-left: 0em;
 
   .title {
     font-size: 38px;
@@ -31,7 +30,7 @@
   width: 1000px;
 
 .image{
-  width: 300px;
+
 }
 
 .shop-info{
@@ -45,9 +44,18 @@
 }
 
 .bio{
-  width: 500px;
   margin-left: 50px;
 }
 }
 
+}
+
+.social-media{
+  display: flex;
+  flex-direction: row;
+
+  .social-icon{
+    display: flex;
+    flex-direction: row;
+  }
 }
