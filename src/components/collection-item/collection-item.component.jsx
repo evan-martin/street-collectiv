@@ -31,6 +31,7 @@ const CollectionItem = ({item, addItem}) => {
           <span className="price">{price}</span>
         </div>
         <Modal
+        closeIcon
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}

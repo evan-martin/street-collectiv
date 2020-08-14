@@ -7,6 +7,9 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+import "./item-tab-menu.styles.scss";
+
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -19,7 +22,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box p={2}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -47,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ItemTabMenu() {
+export default function ItemTabMenu({description}) {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -58,21 +61,21 @@ export default function ItemTabMenu() {
   return (
     <div className={classes.root}>
 
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+        <Tabs value={value}
+        onChange={handleChange}
+        indicatorColor="primary"
+         >
+          <Tab label="Story" {...a11yProps(0)} />
+          <Tab label="FAQ" {...a11yProps(1)} />
         </Tabs>
 
-      <TabPanel value={value} index={0}>
-
+      <TabPanel value={value} index={0} description={description}>
+        <p className='item-description'>{description}</p>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <p className='item-description'>This is also static (implement!) </p>
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
+
     </div>
   );
 }
