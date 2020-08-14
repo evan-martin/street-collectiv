@@ -5,11 +5,17 @@ import CustomButton from "../custom-button/custom-button.component";
 import {addItem} from "../../redux/cart/cart.actions";
 import {Button, Header, Image, Modal} from "semantic-ui-react";
 
+
 import "./collection-item.styles.scss";
+
+import ItemTabMenu from '../../components/item-tab-menu/item-tab-menu.component'
 
 const CollectionItem = ({item, addItem}) => {
   const {name, price, imageUrl, description} = item;
   const [open, setOpen] = React.useState(false);
+
+
+
 
   return (
     <div>
@@ -30,40 +36,36 @@ const CollectionItem = ({item, addItem}) => {
           open={open}
           trigger={<CustomButton inverted>View </CustomButton>}
         >
-          <Modal.Header>{name}</Modal.Header>
-          <Modal.Content image>
-            <Image size="medium" src={imageUrl} />
-            <Modal.Description>
-              <p>{description}</p>
-              <p>${price}</p>
-            </Modal.Description>
-          </Modal.Content>
+        <Modal.Content image>
+                  <Image size="medium" src={imageUrl} />
+                  <Modal.Description>
+                    <div className="item-overview">
+                      <div className="item-actions">
+                        <h2>{name}</h2>
+                        <p>
+                          Short description (this is static, don't forget to
+                          implement)
+                        </p>
+                        <p>${price}</p>
+                        <button
+                          className="add-to-cart-button"
+                          onClick={() => {
+                            setOpen(false);
+                            addItem(item);
+                          }}
+                          inverted
+                        >
+                          Add to cart
+                        </button>
+                      </div>
+                    </div>
 
-            <Modal.Actions>
-                      <div className="item-button-bar">
-              <button
-                className="back-button"
-                onClick={() => setOpen(false)}
-                inverted
-              >
-                Back
-              </button>
-              <button
-                className="add-to-cart-button"
-                onClick={() => {
-                  setOpen(false);
-                  addItem(item);
-                }}
-                inverted
-              >
-                Add to cart
-              </button>
-                        </div>
-            </Modal.Actions>
+                    <ItemTabMenu description={description} />
 
+                  </Modal.Description>
+                </Modal.Content>
         </Modal>
       </div>
-      <div></div>
     </div>
   );
 };
