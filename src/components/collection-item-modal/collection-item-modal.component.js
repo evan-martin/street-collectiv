@@ -2,58 +2,100 @@ import React from "react";
 import {connect} from "react-redux";
 import {addItem} from "../../redux/cart/cart.actions";
 
-import {Image, Modal} from "semantic-ui-react";
-
 import CustomButton from "../custom-button/custom-button.component";
 import ItemTabMenu from "../../components/item-tab-menu/item-tab-menu.component";
 import SizeSelector from "../../components/size-selector/size-selector.component";
 
+import {makeStyles} from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import Container from "@material-ui/core/Container";
+
 import "./collection-item-modal.styles.scss";
+
+const useStyles = makeStyles(theme => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3)
+  }
+}));
 
 const CollectionItemModal = ({item, addItem}) => {
   const {name, price, imageUrl, description, size} = item;
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
-  return (
-    <Modal
-      size="large"
-      closeIcon
-      onClose={() => setOpen(false)}
-      onOpen={() => setOpen(true)}
-      open={open}
-      trigger={<CustomButton inverted>View </CustomButton>}
-    >
-      <Modal.Content image>
-        <Image size="medium" src={imageUrl} />name
-        <Modal.Description>
-          <div className="item-overview">
-            <div className="item-actions">
-              <h2>{name}</h2>
-              <p>
-                Short description (this is static, don't forget to implement)
-              </p>
-              <p>${price}</p>
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
-              <div className={`${size} size-selector`}>
-                <SizeSelector />
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <button onClick={handleOpen} inverted>
+        View
+      </button>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        className={classes.modal}
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500
+        }}
+      >
+        <Fade in={open}>
+          <div className={classes.paper}>
+            <div className="item-overview">
+              <div className="product-image">
+                <img size="medium" src={imageUrl} />
               </div>
-              <button
-                className="add-to-cart-button"
-                onClick={() => {
-                  setOpen(false);
-                  addItem(item);
-                }}
-                inverted
-              >
-                Add to cart
-              </button>
+              <div className="product-information">
+                <div className="item-actions">
+                  <h2>{name}</h2>
+                  <p>
+                    Short description (this is static, don't forget to
+                    implement)
+                  </p>
+                  <p>${price}</p>
+
+                  <div className={`${size} size-selector`}>
+                    <SizeSelector />
+                  </div>
+                  <button
+                    className="add-to-cart-button"
+                    onClick={() => {
+                      setOpen(false);
+                      addItem(item);
+                    }}
+                    inverted
+                  >
+                    Add to cart
+                  </button>
+                </div>
+                <div className="tab-menu">
+                  <ItemTabMenu description={description} />
+                </div>
+              </div>
             </div>
           </div>
-
-          <ItemTabMenu description={description} />
-        </Modal.Description>
-      </Modal.Content>
-    </Modal>
+        </Fade>
+      </Modal>
+    </div>
   );
 };
 
