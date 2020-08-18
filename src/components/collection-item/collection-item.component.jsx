@@ -3,19 +3,16 @@ import {connect} from "react-redux";
 
 import CustomButton from "../custom-button/custom-button.component";
 import {addItem} from "../../redux/cart/cart.actions";
-import {Button, Header, Image, Modal} from "semantic-ui-react";
-
+import { Image, Modal } from "semantic-ui-react";
 
 import "./collection-item.styles.scss";
 
-import ItemTabMenu from '../../components/item-tab-menu/item-tab-menu.component'
+import SizeSelector from "../../components/size-selector/size-selector.component"
+import ItemTabMenu from "../../components/item-tab-menu/item-tab-menu.component";
 
 const CollectionItem = ({item, addItem}) => {
-  const {name, price, imageUrl, description} = item;
+  const {name, price, imageUrl, description, size} = item;
   const [open, setOpen] = React.useState(false);
-
-
-
 
   return (
     <div>
@@ -31,40 +28,44 @@ const CollectionItem = ({item, addItem}) => {
           <span className="price">{price}</span>
         </div>
         <Modal
-        closeIcon
+        size='large'
+          closeIcon
           onClose={() => setOpen(false)}
           onOpen={() => setOpen(true)}
           open={open}
           trigger={<CustomButton inverted>View </CustomButton>}
         >
-        <Modal.Content image>
-                  <Image size="medium" src={imageUrl} />
-                  <Modal.Description>
-                    <div className="item-overview">
-                      <div className="item-actions">
-                        <h2>{name}</h2>
-                        <p>
-                          Short description (this is static, don't forget to
-                          implement)
-                        </p>
-                        <p>${price}</p>
-                        <button
-                          className="add-to-cart-button"
-                          onClick={() => {
-                            setOpen(false);
-                            addItem(item);
-                          }}
-                          inverted
-                        >
-                          Add to cart
-                        </button>
-                      </div>
-                    </div>
+          <Modal.Content image>
+            <Image size="medium" src={imageUrl} />
+            <Modal.Description>
+              <div className="item-overview">
+                <div className="item-actions">
+                  <h2>{name}</h2>
+                  <p>
+                    Short description (this is static, don't forget to
+                    implement)
+                  </p>
+                  <p>${price}</p>
 
-                    <ItemTabMenu description={description} />
+                  <div className={`${size} size-selector`}>
+                    <SizeSelector />
+                  </div>
+                  <button
+                    className="add-to-cart-button"
+                    onClick={() => {
+                      setOpen(false);
+                      addItem(item);
+                    }}
+                    inverted
+                  >
+                    Add to cart
+                  </button>
+                </div>
+              </div>
 
-                  </Modal.Description>
-                </Modal.Content>
+              <ItemTabMenu description={description} />
+            </Modal.Description>
+          </Modal.Content>
         </Modal>
       </div>
     </div>

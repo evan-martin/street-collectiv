@@ -9,6 +9,7 @@ const SHOP_DATA = {
       {
         id: 1,
         name: 'Brown Brim',
+        size: 'size',
         imageUrl: 'https://i.ibb.co/ZYW3VTp/brown-brim.png',
         description: 'Fanny pack man bun small batch, hella portland bicycle rights enamel pin fashion axe cloud bread seitan. Organic cred lumbersexual man bun mustache blue bottle pop-up seitan occupy literally yuccie.',
         price: 25
@@ -23,6 +24,7 @@ const SHOP_DATA = {
       {
         id: 3,
         name: 'Brown Cowboy',
+        size: 'size',
         imageUrl: 'https://i.ibb.co/QdJwgmp/brown-cowboy.png',
         description: 'Fanny pack man bun small batch, hella portland bicycle rights enamel pin fashion axe cloud bread seitan. Organic cred lumbersexual man bun mustache blue bottle pop-up seitan occupy literally yuccie.',
         price: 35
