@@ -1,16 +1,12 @@
 import React from "react";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
-import CustomButton from "../custom-button/custom-button.component";
-import {addItem} from "../../redux/cart/cart.actions";
-
-import CollectionItemModal from "../collection-item-modal/collection-item-modal.component"
+import CollectionItemModal from "../collection-item-modal/collection-item-modal.component";
 
 import "./collection-item.styles.scss";
 
-
-const CollectionItem = ({item}) => {
-  const {name, price, imageUrl} = item;
+const CollectionItem = ({ item }) => {
+  const { name, price, imageUrl } = item;
 
   return (
     <div>
@@ -18,7 +14,7 @@ const CollectionItem = ({item}) => {
         <div
           className="image"
           style={{
-            backgroundImage: `url(${imageUrl})`
+            backgroundImage: `url(${imageUrl})`,
           }}
         />
         <div className="collection-footer">
@@ -31,6 +27,6 @@ const CollectionItem = ({item}) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = (dispatch) => ({});
 
 export default connect(null, mapDispatchToProps)(CollectionItem);

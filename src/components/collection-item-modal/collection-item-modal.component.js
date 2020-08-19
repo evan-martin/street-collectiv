@@ -43,7 +43,7 @@ const CollectionItemModal = ({item, addItem}) => {
 
   return (
     <div>
-      <button onClick={handleOpen} inverted>
+      <button onClick={handleOpen} className='custom-button'>
         View
       </button>
       <Modal
@@ -62,7 +62,7 @@ const CollectionItemModal = ({item, addItem}) => {
           <div className={classes.paper}>
             <div className="item-overview">
               <div className="product-image">
-                <img size="medium" src={imageUrl} />
+                <img size="medium" src={imageUrl} alt={name} />
               </div>
               <div className="product-information">
                 <div className="item-actions">
