@@ -3,6 +3,7 @@ import Banner from '../../components/banner/banner.component';
 import Highlight from '../../components/highlight/highlight.component';
 import LocationFilter from '../../components/location-filter/location-filter.component'
 
+
 import './splash.styles.scss';
 
 const SplashPage = () => (

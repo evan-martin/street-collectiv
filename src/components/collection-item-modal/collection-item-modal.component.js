@@ -1,35 +1,35 @@
 import React from "react";
-import {connect} from "react-redux";
-import {addItem} from "../../redux/cart/cart.actions";
+import { connect } from "react-redux";
+import { addItem } from "../../redux/cart/cart.actions";
 
 import CustomButton from "../custom-button/custom-button.component";
 import ItemTabMenu from "../../components/item-tab-menu/item-tab-menu.component";
 import SizeSelector from "../../components/size-selector/size-selector.component";
+import MyGallery from "../../components/gallery/gallery";
 
-import {makeStyles} from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import Container from "@material-ui/core/Container";
 
 import "./collection-item-modal.styles.scss";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
-  }
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
-const CollectionItemModal = ({item, addItem}) => {
-  const {name, price, imageUrl, description, size} = item;
+const CollectionItemModal = ({ item, addItem }) => {
+  const { name, price, imageUrl, description, size } = item;
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -43,7 +43,7 @@ const CollectionItemModal = ({item, addItem}) => {
 
   return (
     <div>
-      <button onClick={handleOpen} className='custom-button'>
+      <button onClick={handleOpen} className="custom-button">
         View
       </button>
       <Modal
@@ -55,14 +55,14 @@ const CollectionItemModal = ({item, addItem}) => {
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500
+          timeout: 500,
         }}
       >
         <Fade in={open}>
           <div className={classes.paper}>
             <div className="item-overview">
               <div className="product-image">
-                <img size="medium" src={imageUrl} alt={name} />
+                <MyGallery item={item}/>
               </div>
               <div className="product-information">
                 <div className="item-actions">
@@ -99,8 +99,8 @@ const CollectionItemModal = ({item, addItem}) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+const mapDispatchToProps = (dispatch) => ({
+  addItem: (item) => dispatch(addItem(item)),
 });
 
 export default connect(null, mapDispatchToProps)(CollectionItemModal);
