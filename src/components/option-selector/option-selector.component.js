@@ -21,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const SizeSelector = ()=>{
+const OptionSelector = ({ item })=>{
+  const { options } = item;
   const classes = useStyles();
     const [age, setAge] = React.useState('');
 
@@ -32,7 +33,7 @@ const SizeSelector = ()=>{
   return(
   <FormControl required className={classes.formControl}>
     <InputLabel id="demo-simple-select-required-label">
-      Size
+      Options
     </InputLabel>
     <Select
       labelId="demo-simple-select-required-label"
@@ -40,10 +41,11 @@ const SizeSelector = ()=>{
       value={age}
       onChange={handleChange}
       className={classes.selectEmpty}
+      defaultValue={`${options[0].option}`}
     >
-      <MenuItem value={10}>Small</MenuItem>
-      <MenuItem value={20}>Medium</MenuItem>
-      <MenuItem value={30}>Large</MenuItem>
+      <MenuItem value={10}>{`${options[0].option}`}</MenuItem>
+      <MenuItem value={20}>{`${options[1].option}`}</MenuItem>
+      <MenuItem value={30}>{`${options[2].option}`}</MenuItem>
     </Select>
     <FormHelperText>Required</FormHelperText>
   </FormControl>
@@ -51,4 +53,4 @@ const SizeSelector = ()=>{
 
 }
 
-export default SizeSelector;
+export default OptionSelector;

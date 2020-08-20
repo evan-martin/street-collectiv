@@ -52,7 +52,7 @@ flex-wrap: wrap;
 
 
 .size-selector {
-display: none;
+display: flex;
 
   &.size{
     margin-top: -1em;
