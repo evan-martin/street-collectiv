@@ -1,18 +1,51 @@
 .directory-item{
+  border: 1px solid black;
+  width: 800px;
 
   .entrepreneur{
+    display: flex;
+    flex-direction: row;
+    
 
     .quote{
-      border: 1px solid black;
+      align-self: center;
+     
+      
+
+      .quote-text{
+        
+        padding-left: 1em;
+
+        
+      }
     }
   }
 
   .directory-gallery{
     border: 1px solid black;
+    width:400px;
+    padding-left: 100px;
+
+    .image-gallery{
+     
+    }
+
+    
+    
   }
 
   .button-bar{
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+
+   
   }
+}
+
+
+img.owner-image{
+  width:200px;
+  border-radius: 50%;
+  border: 1px solid black;
 }

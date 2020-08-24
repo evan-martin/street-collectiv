@@ -3,6 +3,7 @@ const INITIAL_STATE = {
     {
       md: true,
       title: 'shop 1',
+      ownerPicUrl:'https://picsum.photos/501/501',
       imageUrl: 'https://picsum.photos/500/500',
       id: 1,
       linkUrl: '/shop1',
@@ -13,6 +14,7 @@ const INITIAL_STATE = {
     {
       md: true,
       title: 'shop 2',
+      ownerPicUrl:'https://picsum.photos/502/502',
       imageUrl: 'https://picsum.photos/500/501',
       id: 2,
       linkUrl: '/shop2',
@@ -24,6 +26,7 @@ const INITIAL_STATE = {
     {
       dc: true,
       title: 'shop 3',
+      ownerPicUrl:'https://picsum.photos/503/503',
       imageUrl: 'https://picsum.photos/500/502',
       id: 3,
       linkUrl: '/shop3',
@@ -34,6 +37,7 @@ const INITIAL_STATE = {
     {
       dc: true,
       title: 'shop 4',
+      ownerPicUrl:'https://picsum.photos/504/504',
       imageUrl: 'https://picsum.photos/500/503',
       id: 4,
       linkUrl: '/shop4',
@@ -45,6 +49,7 @@ const INITIAL_STATE = {
     {
       va:true,
       title: 'shop 5',
+      ownerPicUrl:'https://picsum.photos/505/505',
       imageUrl: 'https://picsum.photos/500/504',
       id: 5,
       linkUrl: '/shop5',
