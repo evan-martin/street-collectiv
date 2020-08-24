@@ -4,7 +4,7 @@ const SHOP_DATA = {
     title: 'Shop 1',
     imageUrl: 'https://picsum.photos/500/500',
     bio: 'Vexillologist thundercats biodiesel williamsburg cronut you probably havent heard of them cloud bread. Salvia celiac enamel pin jean shorts vape. Aesthetic la croix hashtag narwhal yr ramps hot chicken marfa put a bird on it hell of vinyl normcore. Master cleanse austin photo booth craft beer disrupt yuccie, palo santo VHS etsy.',
-    routeName: 'shop1',
+    routeName: 'shop/shop1',
     items: [
       {
         id: 1,
@@ -95,14 +95,14 @@ const SHOP_DATA = {
         name: 'Blue Snapback',
         imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
         description: 'Fanny pack man bun small batch, hella portland bicycle rights enamel pin fashion axe cloud bread seitan. Organic cred lumbersexual man bun mustache blue bottle pop-up seitan occupy literally yuccie.',
-        price: 16
+        price: 16,
       }
     ]
   },
 shop2: {
     id: 2,
     title: 'Shop 2',
-    routeName: 'shop2',
+    routeName: 'shop/shop2',
     items: [
       {
         id: 10,
@@ -165,7 +165,7 @@ shop2: {
   shop3: {
     id: 3,
     title: 'Shop 3',
-    routeName: 'shop3',
+    routeName: 'shop/shop3',
     items: [
       {
         id: 18,
@@ -207,7 +207,7 @@ shop2: {
   shop4: {
     id: 4,
     title: 'Shop 4',
-    routeName: 'shop4',
+    routeName: '/shop/shop4',
     items: [
       {
         id: 23,
@@ -263,7 +263,7 @@ shop2: {
 shop5: {
     id: 5,
     title: 'Shop 5',
-    routeName: 'shop5',
+    routeName: 'shop/shop5',
     items: [
       {
         id: 30,

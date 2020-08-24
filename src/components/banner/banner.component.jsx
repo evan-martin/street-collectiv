@@ -8,6 +8,7 @@ const Banner = () => (
   <img
     className='image'
     src='https://www.dcsr.org/wp-content/uploads/2018/08/DCSkyline.jpg'
+    alt='DC'
   />
   </div>
 

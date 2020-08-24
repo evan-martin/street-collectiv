@@ -2,9 +2,9 @@ import React from "react";
 import {withRouter} from "react-router-dom";
 import CustomButton from "../custom-button/custom-button.component";
 
-import "./menu-item.styles.scss";
+import "./directory-item.styles.scss";
 
-const MenuItem = ({title, bio, imageUrl, reverse, history, linkUrl, match}) => (
+const DirectoryItem = ({title, bio, imageUrl, reverse, history, linkUrl, match}) => (
   <div
     className={`${reverse} menu-item`}
   >
@@ -19,7 +19,7 @@ const MenuItem = ({title, bio, imageUrl, reverse, history, linkUrl, match}) => (
       <p> {bio} </p>
       <div className='button-bar'>
         <button className='shop-button'
-          onClick={() => history.push(`${linkUrl}`)}>
+          onClick={() => history.push(`shop${linkUrl}`)}>
           Shop
         </button>
         <button className='love-button'> sHoW SoMe lOvE </button>
@@ -28,4 +28,4 @@ const MenuItem = ({title, bio, imageUrl, reverse, history, linkUrl, match}) => (
   </div>
 );
 
-export default withRouter(MenuItem);
+export default withRouter(DirectoryItem);

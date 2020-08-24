@@ -7,10 +7,10 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css'
 
 import HomePage from './pages/homepage/homepage.component';
-import CheckoutPage from './pages/checkout/checkout.component';
-import SplashPage from './pages/splash/splash.component'
 
 import Header from './components/header/header.component';
+import CheckoutPage from './pages/checkout/checkout.component'
+import StoreFront from './pages/storefront/storefront.component'
 
 
 
@@ -19,12 +19,15 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Header />
+       <Header />
         <Switch>
-          <Route exact path='/' component={SplashPage} />
-          <Route path='/shop' component={HomePage} />
-          <Route exact path='/checkout' component={CheckoutPage} />
+          <Route exact path="/">
+            <Redirect to="/shop" />
+          </Route>
+          <Route path="/shop" component={HomePage} />
+          <Route exact path="/checkout" component={CheckoutPage} />
         </Switch>
+
       </div>
     );
   }

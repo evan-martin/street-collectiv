@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import CollectionItem from "../../components/collection-item/collection-item.component";
+import Collection from "../../components/collection/collection.component";
 
 import { selectCollection } from "../../redux/shop/shop.selectors";
 
@@ -12,7 +12,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 
-import './storefront.styles.scss'
+import "./storefront.styles.scss";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -94,14 +94,7 @@ const StoreFront = ({ collection }) => {
         </div>
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <div className="collection-page">
-            <h2 className="title">{title}</h2>
-            <div className="items">
-              {items.map(item => (
-                <CollectionItem key={item.id} item={item} />
-              ))}
-            </div>
-          </div>
+            <Collection collection = {collection} />
       </TabPanel>
     </div>
   );

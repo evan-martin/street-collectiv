@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cart.actions";
 
 import CustomButton from "../custom-button/custom-button.component";
-import ItemTabMenu from "../../components/item-tab-menu/item-tab-menu.component";
+import ItemTabMenu from "../item-tab-menu/item-tab-menu.component";
 import OptionSelector from "../../components/option-selector/option-selector.component";
-import MyGallery from "../../components/gallery/gallery";
+import MyGallery from "../gallery/gallery.component";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -74,7 +74,7 @@ const CollectionItemModal = ({ item, addItem }) => {
                   <p>${price}</p>
 
                   <div className={`${size} size-selector`}>
-                    <OptionSelector item={item} />
+                    
                   </div>
                   <button
                     className="add-to-cart-button"
