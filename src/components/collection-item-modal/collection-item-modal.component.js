@@ -5,7 +5,7 @@ import { addItem } from "../../redux/cart/cart.actions";
 import CustomButton from "../custom-button/custom-button.component";
 import ItemTabMenu from "../item-tab-menu/item-tab-menu.component";
 import OptionSelector from "../../components/option-selector/option-selector.component";
-import MyGallery from "../gallery/gallery.component";
+import MyGallery from "../collection-item-gallery/collection-item-gallery.component";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";

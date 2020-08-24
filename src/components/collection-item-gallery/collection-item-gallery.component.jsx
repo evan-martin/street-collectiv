@@ -4,7 +4,7 @@ import { addItem } from "../../redux/cart/cart.actions";
 
 import ImageGallery from "react-image-gallery";
 
-import "./gallery.styles.scss";
+import "./collection-item-gallery.styles.scss";
 
 const MyGallery = ({ item, addItem }) => {
   const { name, price, imageUrl, description, size } = item;
