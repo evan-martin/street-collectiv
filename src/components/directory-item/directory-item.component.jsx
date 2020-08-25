@@ -5,7 +5,6 @@ import CustomButton from "../custom-button/custom-button.component";
 import DirectoryGallery from '../directory-item-gallery/directory-item-gallery.component'
 
 import "./directory-item.styles.scss";
-import { ImageGroup } from "semantic-ui-react";
 
 const DirectoryItem = ({
   title,
@@ -25,16 +24,19 @@ const DirectoryItem = ({
       </div>
       <div className="quote">
         
-        <p className='quote-text'> "{quote}" - {owner}
+        <p className='quote-text'> "{quote}"<br></br> <h4>-{owner}</h4>
         </p>
         
       </div>
     </div>
     <div className="directory-gallery">
+      
       <DirectoryGallery imageUrl={imageUrl}/>
+
     </div>
+    
     <div className="button-bar">
-      <h3 className="title"> {title.toUpperCase()} </h3>
+      <h1 className="title"> {title.toUpperCase()} </h1>
       <CustomButton 
         onClick={() => history.push(`shop${linkUrl}`)}
       >
