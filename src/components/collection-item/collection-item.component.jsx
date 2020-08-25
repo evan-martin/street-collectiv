@@ -9,7 +9,7 @@ const CollectionItem = ({ item }) => {
   const { name, price, imageUrl } = item;
 
   return (
-    <div>
+    
       <div className="collection-item">
         <div
           className="image"
@@ -23,7 +23,7 @@ const CollectionItem = ({ item }) => {
         </div>
         <CollectionItemModal item={item} />
       </div>
-    </div>
+    
   );
 };
 

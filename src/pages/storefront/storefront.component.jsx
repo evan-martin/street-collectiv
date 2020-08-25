@@ -71,18 +71,17 @@ const StoreFront = ({ collection }) => {
         onChange={handleChange}
         indicatorColor="primary"
       >
-        <Tab label="Our Story" {...a11yProps(0)} />
-        <Tab label="Our Products" {...a11yProps(1)} />
+        <Tab label="Products" {...a11yProps(0)} />
+        <Tab label="Story" {...a11yProps(1)} />
       </Tabs>
 
-      <TabPanel value={value} index={0} collection={collection}>
+      <TabPanel value={value} index={1} collection={collection}>
         <div className="our-story">
-          <div
-            className="image"
-            style={{
-              backgroundImage: `url(${imageUrl})`,
-            }}
-          />
+          <div className="shop-image">
+            
+              <img src={imageUrl} />
+            
+          </div>
           <div className="shop-info">
             <div className="title">
               <h1>{title}</h1>
@@ -93,7 +92,7 @@ const StoreFront = ({ collection }) => {
           </div>
         </div>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={0}>
             <Collection collection = {collection} />
       </TabPanel>
     </div>

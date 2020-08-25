@@ -1,0 +1,12 @@
+.our-story{
+    display: flex;
+    flex-direction: row;
+
+    .shop-image{
+        max-width: 500px;
+    }
+
+    .shop-info{
+        margin-left:1em;
+    }
+}
