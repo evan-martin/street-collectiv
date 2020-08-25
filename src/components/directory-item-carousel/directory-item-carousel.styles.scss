@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+    width: 800px;
+    margin: auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  
+  .buttonBack {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .buttonNext {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+  
+  
+  .dotGroup {
+    text-align: center;
+  }

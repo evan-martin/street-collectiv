@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import CustomButton from "../custom-button/custom-button.component";
 import DirectoryGallery from '../directory-item-gallery/directory-item-gallery.component'
+import DirectoryCarousel from '../directory-item-carousel/directory-item-carousel.component'
 
 import "./directory-item.styles.scss";
 
@@ -17,7 +18,12 @@ const DirectoryItem = ({
   owner,
   quote,
 }) => (
+
+        
+
+  
   <div className="directory-item">
+
     <div className="entrepreneur">
       <div className='owner-avatar'>
         <img className='owner-image' src={ownerPicUrl} alt={owner} />
@@ -31,7 +37,7 @@ const DirectoryItem = ({
     </div>
     <div className="directory-gallery">
       
-      <DirectoryGallery imageUrl={imageUrl}/>
+    <DirectoryCarousel imageUrl={imageUrl}/>
 
     </div>
     
@@ -45,6 +51,7 @@ const DirectoryItem = ({
       <CustomButton> sHoW SoMe lOvE </CustomButton>
     </div>
   </div>
+  
 );
 
 export default withRouter(DirectoryItem);
