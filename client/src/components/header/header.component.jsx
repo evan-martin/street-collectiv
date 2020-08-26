@@ -18,7 +18,7 @@ const Header = ({ hidden }) => (
       <Link className='option' to='/'>
         HOME
       </Link>
-      <Link className='option' to='/'>
+      <Link className='option' to='/about'>
         ABOUT
       </Link>
 
