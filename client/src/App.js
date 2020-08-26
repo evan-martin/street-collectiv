@@ -9,7 +9,7 @@ import HomePage from './pages/homepage/homepage.component';
 
 import Header from './components/header/header.component';
 import CheckoutPage from './pages/checkout/checkout.component'
-import StoreFront from './pages/storefront/storefront.component'
+import PaymentSuccess from './pages/payment-success/payment-success.component'
 
 
 
@@ -25,6 +25,7 @@ class App extends React.Component {
           </Route>
           <Route path="/shop" component={HomePage} />
           <Route exact path="/checkout" component={CheckoutPage} />
+          <Route exact path='/success' component={PaymentSuccess} />
         </Switch>
 
       </div>
