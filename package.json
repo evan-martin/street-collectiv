@@ -1,7 +1,7 @@
 {
   "name": "street-collectiv",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
