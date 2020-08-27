@@ -3,6 +3,7 @@ import { Button, CircularProgress, Box } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { API } from 'aws-amplify';
 import { injectStripe } from 'react-stripe-elements';
+import CustomButton from '../../components/custom-button/custom-button.component'
 
 class CheckoutButtonContent extends Component {
     state = {
@@ -44,11 +45,11 @@ class CheckoutButtonContent extends Component {
         const { amount, currency } = this.props;
         return (
             <Box display="flex" flexDirection="row-reverse" flexWrap="wrap" alignItems="center">
-                <Button onClick={this.handlePay} disabled={loading} variant="contained" color="secondary">Checkout ({parseFloat(Math.round(amount) / 100).toFixed(2)} {currency})</Button>
+                <CustomButton onClick={this.handlePay}> Checkout </CustomButton>
                 <Box marginRight={2} />
                 {
                     loading ?
-                        <CircularProgress color="secondary" />
+                        <CircularProgress color="primary" />
                         :
                         null
                 }

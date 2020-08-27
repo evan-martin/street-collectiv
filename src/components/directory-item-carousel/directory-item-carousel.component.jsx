@@ -4,7 +4,7 @@ import {
   ButtonNext,
   CarouselProvider,
   DotGroup,
-  ImageWithZoom,
+  Image,
   Slide,
   Slider,
 } from 'pure-react-carousel';
@@ -15,11 +15,11 @@ import './directory-item-carousel.styles.scss';
 
 const DirectoryCarousel = ({imageUrl}) => (
   <CarouselProvider
-    visibleSlides={3}
+    visibleSlides={2}
     totalSlides={6}
-    step={3}
-    naturalSlideWidth={400}
-    naturalSlideHeight={500}
+    step={2}
+    naturalSlideWidth={200}
+    naturalSlideHeight={200}
     hasMasterSpinner
   >
    
@@ -27,22 +27,22 @@ const DirectoryCarousel = ({imageUrl}) => (
     <div className='container'>
       <Slider className='slider'>
         <Slide index={0}>
-          <ImageWithZoom src={imageUrl} />
+          <Image src={imageUrl} />
         </Slide>
         <Slide index={1}>
-          <ImageWithZoom src={imageUrl} />
+          <Image src={imageUrl} />
         </Slide>
         <Slide index={2}>
-          <ImageWithZoom src={imageUrl} />
+          <Image src={imageUrl} />
         </Slide>
         <Slide index={3}>
-          <ImageWithZoom src={imageUrl} />
+          <Image src={imageUrl} />
         </Slide>
         <Slide index={4}>
-          <ImageWithZoom src={imageUrl} />
+          <Image src={imageUrl} />
         </Slide>
         <Slide index={5}>
-          <ImageWithZoom src={imageUrl} />
+          <Image src={imageUrl} />
         </Slide>
       </Slider>
       <ButtonBack className='buttonBack'>Back</ButtonBack>

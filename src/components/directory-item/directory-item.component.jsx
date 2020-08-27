@@ -34,15 +34,8 @@ const DirectoryItem = ({
         </p>
         
       </div>
-    </div>
-    <div className="directory-gallery">
+      <div className="button-bar">
       
-    <DirectoryCarousel imageUrl={imageUrl}/>
-
-    </div>
-    
-    <div className="button-bar">
-      <h1 className="title"> {title.toUpperCase()} </h1>
       <CustomButton 
         onClick={() => history.push(`shop${linkUrl}`)}
       >
@@ -50,6 +43,14 @@ const DirectoryItem = ({
       </CustomButton>
       <CustomButton> sHoW SoMe lOvE </CustomButton>
     </div>
+    </div>
+    <div className="directory-gallery">
+      
+      <DirectoryCarousel imageUrl={imageUrl}/>
+  
+      </div>
+    
+    
   </div>
   
 );

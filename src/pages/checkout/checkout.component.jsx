@@ -50,8 +50,8 @@ const CheckoutPage = ({ cartItems, total, price }) => (
          amount={550}
          currency='usd'
          quantity={1}
-         success_url='https://localhost:3000/success'
-         cancel_url='https://localhost:3000/checkout' 
+         success_url='https://dev.d633tolgopiyi.amplifyapp.com/success'
+         cancel_url='https://dev.d633tolgopiyi.amplifyapp.com/checkout' 
        />
       </div>
   </div>

@@ -3,11 +3,12 @@
   width: 800px;
   margin-bottom: 5em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 
   .entrepreneur {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     .owner-avatar {
       margin-top: -3em;
@@ -26,8 +27,8 @@
   .directory-gallery {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    border: 1px solid black;
+    justify-self: flex-end;
+ 
     margin-top: 1em;
     margin-bottom: 2em;
 
@@ -38,8 +39,9 @@
   .button-bar {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 200px;
     margin-bottom: 2em;
 
   }
