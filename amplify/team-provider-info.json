@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-streetcollectiv-dev-115019-authRole",
+            "UnauthRoleArn": "arn:aws:iam::117720058233:role/amplify-streetcollectiv-dev-115019-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::117720058233:role/amplify-streetcollectiv-dev-115019-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-streetcollectiv-dev-115019-deployment",
+            "UnauthRoleName": "amplify-streetcollectiv-dev-115019-unauthRole",
+            "StackName": "amplify-streetcollectiv-dev-115019",
+            "StackId": "arn:aws:cloudformation:us-east-1:117720058233:stack/amplify-streetcollectiv-dev-115019/0339b110-e87d-11ea-b485-0e229acdb0d3",
+            "AmplifyAppId": "d9w28wg1jgzkn"
+        }
+    }
+}
