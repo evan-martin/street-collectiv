@@ -40,7 +40,19 @@ const CheckoutPage = ({ cartItems, total, price }) => (
     ))}
     <div className='total'>TOTAL: ${total}</div>
       <div className='checkout-button'>     
-       <CheckoutButton />
+       <CheckoutButton 
+         stripePublicKey="pk_test_51HHbIrKx1GFK0jKDF4ih2zqyJobVb2RpyYXmf53LAlayVqT00qxZfgLsMw26Mb5Vyi5eV2hB0zcEQ69Xp5GoNhav00VygjfmsD"
+         apiName="stripeAPI"
+         apiEndpoint="/checkout"
+         name='T-shirt'
+         description='Comfortable cotton t-shirt'
+         images={['http://lorempixel.com/400/200/']}
+         amount={550}
+         currency='usd'
+         quantity={1}
+         success_url='https://localhost:3000/success'
+         cancel_url='https://localhost:3000/checkout' 
+       />
       </div>
   </div>
 

@@ -1,36 +1,60 @@
-import React from 'react';
-import { loadStripe } from '@stripe/stripe-js';
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
-const stripePromise = loadStripe('pk_test_51HHbIrKx1GFK0jKDF4ih2zqyJobVb2RpyYXmf53LAlayVqT00qxZfgLsMw26Mb5Vyi5eV2hB0zcEQ69Xp5GoNhav00VygjfmsD');
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Elements, StripeProvider } from 'react-stripe-elements';
+import CheckoutButtonContent from './checkout-button-content';
 
+class CheckoutButton extends Component {
+    render() {
+        const {
+            stripePublicKey,
+            apiName,
+            apiEndpoint,
 
-const CheckoutButton = () =>{
-    const handleClick = async (event) => {
-        // Get Stripe.js instance
-        const stripe = await stripePromise;
-    
-        // Call your backend to create the Checkout Session
-        const response = await fetch('/create-checkout-session', { method: 'POST' });
-    
-        const session = await response.json();
-    
-        // When the customer clicks on the button, redirect them to Checkout.
-        const result = await stripe.redirectToCheckout({
-          sessionId: session.id,
-        });
-    
-        if (result.error) {
-          // If `redirectToCheckout` fails due to a browser or network
-          // error, display the localized error message to your customer
-          // using `result.error.message`.
-        }
-      };
-  return (
-    <button className ='custom-button' role="link" onClick={handleClick}>
-      Checkout
-    </button>
-  );
+            name,
+            description,
+            images,
+            amount,
+            currency,
+            quantity,
+
+            success_url,
+            cancel_url,
+        } = this.props;
+        return (
+            <StripeProvider apiKey={stripePublicKey}>
+                <Elements>
+                    <CheckoutButtonContent
+                        apiName={apiName}
+                        apiEndpoint={apiEndpoint}
+                        name={name}
+                        description={description}
+                        images={images}
+                        amount={amount}
+                        currency={currency}
+                        quantity={quantity}
+                        success_url={success_url}
+                        cancel_url={cancel_url}
+                    />
+                </Elements>
+            </StripeProvider>
+        );
+    }
 }
 
-export default CheckoutButton
+CheckoutButton.propTypes = {
+    stripePublicKey: PropTypes.string.isRequired,
+    apiName: PropTypes.string.isRequired,
+    apiEndpoint: PropTypes.string.isRequired,
+
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    images: PropTypes.array.isRequired,
+    amount: PropTypes.number.isRequired,
+    currency: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+
+    success_url: PropTypes.string.isRequired,
+    cancel_url: PropTypes.string.isRequired,
+};
+
+export default CheckoutButton;
