@@ -42,7 +42,7 @@ const CheckoutPage = ({ cartItems, total, price }) => (
       <div className='checkout-button'>     
        <CheckoutButton 
          stripePublicKey="pk_test_51HHbIrKx1GFK0jKDF4ih2zqyJobVb2RpyYXmf53LAlayVqT00qxZfgLsMw26Mb5Vyi5eV2hB0zcEQ69Xp5GoNhav00VygjfmsD"
-         apiName="stripeAPI"
+         apiName="stripeapi"
          apiEndpoint="/checkout"
          name='T-shirt'
          description='Comfortable cotton t-shirt'

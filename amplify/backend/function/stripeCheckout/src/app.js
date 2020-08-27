@@ -27,7 +27,6 @@ app.use(function(req, res, next) {
 
 const stripe = require('stripe')('sk_test_51HHbIrKx1GFK0jKD9IqCfOM77bK4sHdaKham6u8FPE8yZHllvyDSH8DD5ZUVJfkDrIkOC3w4ilJxYryr793dfIJG00NApVPbvd');
 
-
 app.post('/checkout', async function (req, res) {
   try {
     const session = await stripe.checkout.sessions.create({
@@ -48,6 +47,7 @@ app.post('/checkout', async function (req, res) {
     res.json({ err: err })
   }
 });
+
 
 app.listen(3000, function() {
     console.log("App started")

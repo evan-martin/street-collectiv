@@ -8,8 +8,8 @@
             }
         }
     ],
-    "resourceName": "stripeAPI",
-    "apiName": "stripeAPI",
+    "resourceName": "stripeapi",
+    "apiName": "stripeapi",
     "functionArns": [
         {
             "lambdaFunction": "stripeCheckout"
@@ -18,8 +18,8 @@
     "privacy": {
         "auth": 0,
         "unauth": 0,
-        "authRoleName": "amplify-streetcollectiv-dev-115019-authRole",
-        "unAuthRoleName": "amplify-streetcollectiv-dev-115019-unauthRole"
+        "authRoleName": "amplify-streetcollectiv-dev-144651-authRole",
+        "unAuthRoleName": "amplify-streetcollectiv-dev-144651-unauthRole"
     },
     "dependsOn": [
         {

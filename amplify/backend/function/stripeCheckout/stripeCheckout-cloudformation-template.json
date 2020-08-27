@@ -68,8 +68,8 @@
 				"Layers": [],
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "amplify-streetcollectiv-dev-115019-deployment",
-					"S3Key": "amplify-builds/stripeCheckout-55564a62756e4f685a52-build.zip"
+					"S3Bucket": "amplify-streetcollectiv-dev-144651-deployment",
+					"S3Key": "amplify-builds/stripeCheckout-4b586b4e517a46345736-build.zip"
 				}
 			}
 		},
@@ -79,12 +79,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"streetcollectivLambdaRoledc735619",
+						"streetcollectivLambdaRoleed1b16c2",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"streetcollectivLambdaRoledc735619",
+									"streetcollectivLambdaRoleed1b16c2",
 									"-",
 									{
 										"Ref": "env"
