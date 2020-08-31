@@ -41,6 +41,7 @@ app.post('/checkout', async function (req, res) {
       }],
       success_url: req.body.success_url,
       cancel_url: req.body.cancel_url,
+      
     });
     res.json({ err: null, success: 'Create stripe checkout session succeed!', session })
   } catch (err) {
