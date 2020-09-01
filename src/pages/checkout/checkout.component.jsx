@@ -47,7 +47,7 @@ const CheckoutPage = ({ cartItems, total, price }) => (
          name='T-shirt'
          description='Comfortable cotton t-shirt'
          images={['http://lorempixel.com/400/200/']}
-         amount={price*100}
+         amount='1500'
          currency='usd'
          quantity={1}
          success_url='https://dev.d633tolgopiyi.amplifyapp.com/success'
@@ -57,7 +57,6 @@ const CheckoutPage = ({ cartItems, total, price }) => (
   </div>
 
 );
-
 
 
 const mapDispatchToProps = createStructuredSelector({
