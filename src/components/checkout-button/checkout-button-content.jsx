@@ -16,12 +16,8 @@ class CheckoutButtonContent extends Component {
 
     async handlePay() {
         this.setState({ loading: true })
-        const body = {
-            name: this.props.name,
-            description: this.props.description,
-            images: this.props.images,
-            amount: this.props.amount,
-            currency: this.props.currency,
+        const body = {         
+            price: this.props.price,
             quantity: this.props.quantity,
             success_url: this.props.success_url,
             cancel_url: this.props.cancel_url,
@@ -42,7 +38,6 @@ class CheckoutButtonContent extends Component {
 
     render() {
         const { loading } = this.state;
-        const { amount, currency } = this.props;
         return (
             <Box display="flex" flexDirection="row-reverse" flexWrap="wrap" alignItems="center">
                 <CustomButton onClick={this.handlePay}> Checkout </CustomButton>
@@ -62,11 +57,8 @@ CheckoutButtonContent.propTypes = {
     apiName: PropTypes.string.isRequired,
     apiEndpoint: PropTypes.string.isRequired,
 
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    images: PropTypes.array.isRequired,
-    amount: PropTypes.number.isRequired,
-    currency: PropTypes.string.isRequired,
+   
+    price: PropTypes.string.isRequired,
     quantity: PropTypes.number.isRequired,
 
     success_url: PropTypes.string.isRequired,

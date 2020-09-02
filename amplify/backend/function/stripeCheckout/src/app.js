@@ -30,18 +30,17 @@ const stripe = require('stripe')('sk_test_51HHbIrKx1GFK0jKD9IqCfOM77bK4sHdaKham6
 app.post('/checkout', async function (req, res) {
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
-      line_items: [{
-        name: req.body.name,
-        description: req.body.description,
-        images: req.body.images,
-        amount: req.body.amount,
-        currency: req.body.currency,
-        quantity: req.body.quantity,
-      }],
       success_url: req.body.success_url,
       cancel_url: req.body.cancel_url,
-      
+      payment_method_types: ['card'],
+      line_items: [
+        {price: req.body.price, quantity: req.body.quantity},
+      ],
+      mode: 'payment',
+      shipping_address_collection: {
+        allowed_countries: ['US'],
+      },
+      billing_address_collection: 'auto',
     });
     res.json({ err: null, success: 'Create stripe checkout session succeed!', session })
   } catch (err) {

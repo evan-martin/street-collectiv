@@ -16,7 +16,7 @@ import {
 
 import './checkout.styles.scss';
 
-const CheckoutPage = ({ cartItems, total, price }) => (
+const CheckoutPage = ({ cartItems, total }) => (
   <div className='checkout-page'>
     <div className='checkout-header'>
       <div className='header-block'>
@@ -43,13 +43,11 @@ const CheckoutPage = ({ cartItems, total, price }) => (
        <CheckoutButton 
          stripePublicKey="pk_test_51HHbIrKx1GFK0jKDF4ih2zqyJobVb2RpyYXmf53LAlayVqT00qxZfgLsMw26Mb5Vyi5eV2hB0zcEQ69Xp5GoNhav00VygjfmsD"
          apiName="stripeapi"
-         apiEndpoint="/checkout"     
-         name='T-shirt'
-         description='Comfortable cotton t-shirt'
-         images={['http://lorempixel.com/400/200/']}
-         amount='1500'
-         currency='usd'
+         apiEndpoint="/checkout" 
+
+         price='price_1HMg4AKx1GFK0jKD5vBzB5bc'
          quantity={1}
+       
          success_url='https://dev.d633tolgopiyi.amplifyapp.com/success'
          cancel_url='https://dev.d633tolgopiyi.amplifyapp.com/checkout' 
        />

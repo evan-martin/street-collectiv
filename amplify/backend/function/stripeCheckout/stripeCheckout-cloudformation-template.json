@@ -69,7 +69,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-streetcollectiv-dev-144651-deployment",
-					"S3Key": "amplify-builds/stripeCheckout-2b6d37446a4b5077684c-build.zip"
+					"S3Key": "amplify-builds/stripeCheckout-6b36693876345773436d-build.zip"
 				}
 			}
 		},
