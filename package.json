@@ -10,7 +10,7 @@
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@stripe/stripe-js": "^1.9.0",
     "aws-amplify": "^3.0.24",
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "mapbox-gl": "^1.11.1",
     "node-sass": "^4.14.1",
